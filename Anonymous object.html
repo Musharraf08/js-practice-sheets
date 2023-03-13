@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous object!</title>
+</head>
+<body>
+    <div>Anonymous object : Objects without a name not directly referenced and less syntax(No need for unique names)</div>
+</body>
+    <script>
+        class card{
+            constructor(value, suits){
+                this.value = value;
+                this.suits = suits;
+            };
+        };
+        // let card1 = new cards("A", "Heart") ---- No need to assign new name for every object, instead of do this--
+
+        //make an array and fill all the new object values and suits -------- like this!
+
+        let cards =[new card("A", "Hearts"),
+                    new card("A", "Spades"),
+                    new card("A", "Daimonds"),
+                    new card("A", "Clubs"),
+                    new card("2", "Hearts"),
+                    new card("2", "Spades"),
+                    new card("2", "Daimonds"),
+                    new card("2", "Clubs")];
+
+        console.log(cards[0].value , cards[0].suits);
+        cards.forEach(card => console.log(`${card.value} ${card.suits}`));
+
+    </script>
+</html>

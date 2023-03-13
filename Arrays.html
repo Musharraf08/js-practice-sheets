@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays in Javascript</h1>
+</body>
+    <script>
+        // Arrays = think of it as a variable that can store multiple values!
+        let Fruits = ["Mango" , "Banana" , "Apple" , "Orange"]
+        console.log(Fruits);
+        //To find the index no. of any value in a array we use!
+        let index = Fruits.indexOf("Orange");
+        console.log(index);
+        //if we want to get a specific variable we can call it by their indexof number (starts from "0")!
+        console.log(Fruits[0]);
+        //to find the length of the variable values we use:-
+        let len = Fruits.length;
+        console.log(len);
+        //To change the value of a variable index we can use!
+        Fruits[0] = "Guava";
+        console.log(Fruits);
+        //Too Add a value in last of any variable we can use:-
+        Fruits.push("Lemon");
+        console.log(Fruits);
+        //To erase the push value we use:-
+        Fruits.pop();
+        console.log(Fruits);
+        //Too Add a value in the begning of any variable we can use:-
+        Fruits.unshift("Kiwi")
+        console.log(Fruits);
+        //To erase the unshift value we use:-
+        Fruits.shift();
+        console.log(Fruits);
+        //to iterate the elements of a array we can use:-
+        let prices = [5 , 10 , 15 , 20 , 25];
+        for( let i = 0; i < prices.length; i+=1){
+            console.log(prices[i]);
+        };
+        //To iterate backward :- 
+        console.log("iterate backward");
+        for(let i = prices.length - 1; i>=0; i-=1){
+            console.log(prices[i]);
+        };
+        //Another way to iterate a array!
+        console.log("Another way to iterate a array!");
+        for(let price of prices){
+            console.log(price);
+        };
+        //Arrays sorting(A - Z)
+        let games = ["PUBG", "Free fire", "Minecraft", "vice city", "project IGI"]
+        // games = games.sort();
+        games = games.sort().reverse(); //this will reverse the sorting! (Z - A)
+        for(let game of games){
+            console.log(game);
+        };
+
+
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <div>Class and constructor</div>
+</body>
+    <script>
+        // class : A blueprint for creating objects define what properties and methods they have, Use a constructor for unique properties!
+
+        class player{
+            score = 0;
+
+            pause(){
+                console.log(`You pause the game!`)
+            };
+            Exit(){
+                console.log(`You exit the game!`)
+            }
+        }
+        let player1 = new player();
+        player1.score +=5;
+        console.log(player1.score);
+
+        let player2 = new player();
+        player2.pause();
+
+        //constructor = A special method of a class, Accepts arguements and assigns properties!
+        class student{
+            constructor(Name, Age, genderpronoun, Attendence, score){
+                this.name = Name
+                this.Age = Age;
+                this.genderpronoun = genderpronoun
+                this.Attendence = Attendence
+                this.score = score
+            };
+            Result(){
+                console.log(`${this.name} is ${this.Age} years old, ${this.genderpronoun} has ${this.Attendence} attendence in this year and ${this.genderpronoun} scores ${this.score}`);
+            };
+        };
+        let student1 = new student("Musharraf", 18, "he", "80%", "95%");
+        let student2 = new student("Afsheen", 18, "she", "90%", "98%");
+        student1.Result();
+        student2.Result();
+    </script>
+</html>

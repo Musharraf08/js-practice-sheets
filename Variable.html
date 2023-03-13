@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    
+</body>
+    <script>
+        // A variable is a container for storing data
+        // A variable behave as if it was the value that it contains 
+
+        // two steps of making a variable:
+        // 1- Declaration (var , let , const)
+        //2- Assignment (= assignment Operator)
+
+        let Firstname = "Musharraf";//String!
+        let Age = 18;//Number!
+        let student = true;//Booleans!
+
+        //If we want to see the values of the variable on console we use:
+        console.log("hello" , Firstname);
+        console.log("you are" , Age, "years old");
+        console.log("Male:" , student);
+
+        //to see the values of the variable on DOM - Document object model:
+
+        document.getElementById("p1").innerHTML = "Hello " + Firstname;
+        document.getElementById("p2").innerHTML = "You are " + Age + " years old";
+        document.getElementById("p3").innerHTML = "Male: " + student;
+    </script>
+</html>

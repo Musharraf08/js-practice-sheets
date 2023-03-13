@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find hypotenuse!</title>
+</head>
+<body>
+    <div>Find the hypotenuse of the circle:</div>
+    <div>Side A :</div>
+    <input type="text" id="sidea">
+    <div>Side B :</div>
+    <input type="text" id="sideb">
+    <button id="btn">Find Hypotenuse</button>
+    <div id="sidec">Side C :</div>
+    <hr>
+    <div>Find the perimeter of the rectangle:</div>
+    <div>length :</div>
+    <input type="text" id="length">
+    <div>breadth :</div>
+    <input type="text" id="breadth">
+    <button id="bttn">Find perimeter</button>
+    <div id="perimeterrc">perimeter :</div>
+    <hr>
+
+</body>
+    <script>
+        // let a = window.prompt("what is the Side A");
+        // let b = window.prompt("what is the Side B");
+
+        // let c = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+        // console.log(c);
+
+        //Now recreate it in DOM1
+        document.getElementById("btn").onclick = function(){
+            let a = document.getElementById("sidea").value;
+            a = Number(a);
+            let b = document.getElementById("sideb").value;
+            b = Number(b);
+            let c = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+            document.getElementById("sidec").innerHTML = "Side C : "+ c;
+        }
+
+        //project 2: Find the perimeter of the rectangle.
+
+        document.getElementById("bttn").onclick = function(){
+            let length = document.getElementById("length").value;
+            length = Number(length);
+            let breadth = document.getElementById("breadth").value;
+            breadth = Number(breadth);
+            let perimeter = 2*(length + breadth);
+            document.getElementById("perimeterrc").innerHTML = "perimeter : " + perimeter;
+            
+        }
+
+
+
+    </script>
+</html>

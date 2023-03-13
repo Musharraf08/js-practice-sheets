@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count project</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+      #countlabel {
+        display: block;
+        text-align: center;
+        font-size: 70px;
+      }
+      #center {
+        display: flex;
+        justify-content: center;
+      }
+      #center button{
+        padding: 0.5rem;
+        font-size:medium;
+        border-radius: 5px;
+        margin: 0.2rem;
+        cursor: pointer;
+
+      }
+      body {
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="countlabel">0</div>
+      <div id="center">
+        <button id="increase">Increase</button>
+        <button id="reset">reset</button>
+        <button id="Decrease">Decrease</button>
+      </div>
+  </body>
+  <script>
+        let count = 0;
+
+        document.getElementById("increase").onclick = function(){
+            count +=1;
+            document.getElementById("countlabel").innerHTML = count;
+        }
+        document.getElementById("reset").onclick = function(){
+            count = 0;
+            document.getElementById("countlabel").innerHTML = count;
+        }
+        document.getElementById("Decrease").onclick = function(){
+            count -=1;
+            document.getElementById("countlabel").innerHTML = count;
+        }
+  </script>
+</html>

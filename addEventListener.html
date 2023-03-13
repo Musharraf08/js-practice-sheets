@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        #innerdiv{
+            background-color: lightgreen;
+            width : 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        #outerdiv{
+            background-color: lightgreen;
+            width : 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="outerdiv">
+        <div id="innerdiv"></div>
+    </div>
+</body>
+    <script>
+        //addEventListener(Event, function, useCapture)
+        //You can add many eventListener as you want - even the same event that invokes different fuction.
+
+        const innerdiv = document.querySelector("#innerdiv");
+        innerdiv.addEventListener("mouseover", changeblue);
+        innerdiv.addEventListener("mouseout", changeback);
+
+        function changeblue(){
+            innerdiv.style.backgroundColor = "blue";
+        };
+        function changeback(){
+            innerdiv.style.backgroundColor = "lightgreen";
+        };
+    </script>
+</html>

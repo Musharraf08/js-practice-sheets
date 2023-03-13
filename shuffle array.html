@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuffle Array</title>
+</head>
+<body>
+    <div>Shuffle Array</div>
+</body>
+    <script>
+        let cards = ["A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        function shuffle(array){
+            let currentindex = array.length;
+            while(currentindex != 0){
+                let Randomindex = Math.ceil(Math.random() * array.length);
+                currentindex-=1;
+
+                let temp = array[currentindex]
+                array[currentindex] = array[Randomindex]
+                array[Randomindex] = temp
+            };
+            return array;
+        }
+        shuffle(cards);
+        cards.forEach(card => console.log(card));
+    </script>
+</html>

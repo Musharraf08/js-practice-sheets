@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent and child in DOM</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>Mango</li>
+        <li>Banana</li>
+        <li>Papaya</li>
+        <li>Pineapple</li>
+    </ul>
+    <ul id="vegetables">
+        <li>Potato</li>
+        <li>onion</li>
+        <li>Radish</li>
+        <li>Carrot</li>
+    </ul>
+    <ul id="deserts">
+        <li>Ice-cream</li>
+        <li>cake</li>
+        <li>pie</li>
+        <li>custurd</li>
+    </ul>
+</body>
+    <script>
+        //.firstElementChild
+        //.lastElementChild
+        //.parentElement
+        //.nextElementsibling
+        //.privousElementsibling
+        //.children[]
+
+        let child = document.body.firstElementChild;
+        child.style.backgroundColor = "lightblue"
+
+       // Array.from(.children)
+
+       let element = document.querySelector("#vegetables");
+       let children = Array.from(element.children);
+
+       children.forEach(child => child.style.backgroundColor = "lightpink");
+
+
+
+    </script>
+</html>

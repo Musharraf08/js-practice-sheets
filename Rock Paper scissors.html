@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors</title>
+    <style>
+        *{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(255, 216, 216);
+        }
+        #container{
+            text-align: center;
+            padding: 10px;
+            
+        }
+        .texts{
+            font-size: 35px;
+        }
+        .myBtns{
+            margin: 8px 2px;
+            font-size: 18px;
+            font-weight:lighter;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: rgb(255, 17, 0);
+            color: white;
+            cursor: pointer;
+        }
+        .myBtns:hover{
+            box-shadow: 1px 1px 5px 0px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="texts" id="playerText">Player:</div>
+        <div class="texts" id="computerText">Computer:</div>
+        <div class="texts" id="resultText">Result</div>
+        <button class="myBtns" id="rock">Rock</button>
+        <button class="myBtns" id="paper">Paper</button>
+        <button class="myBtns" id="scissors">Scissors</button>
+    </div>
+</body>
+    <script>
+        let playerText = document.querySelector("#playerText");
+        let computerText = document.querySelector("#computerText");
+        let resultText = document.querySelector("#resultText");
+        let myBtns = document.querySelectorAll(".myBtns");
+        let player;
+        let computer;
+        let Result;
+
+        myBtns.forEach(button => button.addEventListener("click", () => {
+            player = button.textContent;
+            computerTurn();
+            playerText.textContent = `Player : ${player}`
+            computerText.textContent = `Computer : ${computer}`
+            resultText.textContent = checkWinner();
+        }));
+        function computerTurn(){
+            const randomNum = Math.ceil(Math.random() * 3);
+            switch(randomNum){
+                case 1 :
+                    computer = "Rock"
+                    break;
+                case 2:
+                    computer = "Paper"
+                    break;
+                case 3: 
+                    computer = "Scissors"
+                    break;
+            };
+        };
+        function checkWinner(){
+            if(player == computer){
+                return "Draw!"
+            }
+            else if(computer == "Rock"){
+                return (player == "Paper") ? "You Win!" : "You Lose!"
+            }
+            else if(computer == "Paper"){
+                return (player == "Scissors") ? "You Win!" : "You Lose!"
+            }
+            else if(computer == "Scissors"){
+                return (player == "R  ock") ? "You Win!" : "You Lose!"
+            }
+        }
+
+    </script>
+</html>

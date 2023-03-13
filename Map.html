@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map in javascript</title>
+</head>
+<body>
+    <div>Map in javascript</div>    
+</body>
+    <script>
+        //Map = Object that holds any key-value pairs of a data type!
+        const store = new Map([
+            ["T-shirt", 300],
+            ["Jeans", 800],
+            ["Shirts", 500],
+            ["Kurtas", 1200],
+            ["Socks", 100]
+        ]);
+        //To add new pairs in a object Map we use set!
+        store.set("payjamas", 400);
+        //to delete any pair of key-value we use delete!
+        store.delete("Shirts");
+        store.forEach((value,key) => console.log(`${key} ${value}`));
+        //get = used to get value of keys!(in this we used it to add the value of each keys)
+        let shoppingCart = 0;
+        shoppingCart += store.get("T-shirt");
+        shoppingCart += store.get("Kurtas");
+        console.log(shoppingCart);
+        //To know that this item stock is available or not we use "has" (this will give a boolean value)
+        console.log(store.has("Socks"));
+        //to find the number of pairs we can use size!
+        console.log(store.size);
+    </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgreen;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #clock{
+            font-size: 50px;
+            font-weight: bold;
+            margin: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+</body>
+    <script>
+        const clock = document.getElementById("clock");
+        updating();
+        setInterval(updating, 1000);
+        function updating(){
+            let date = new Date();
+            clock.innerHTML = formatTime(date)
+
+            function formatTime(date){
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+                let amORpm = hours >=12 ? "PM" : "AM";
+                hours = (hours % 12) || 12 ;
+
+                hours = formatZero(hours);
+                minutes = formatZero(minutes);
+                seconds = formatZero(seconds);
+
+                return `${hours}/${minutes}/${seconds} ${amORpm}`;
+            };
+            function formatZero(time){
+                time = time.toString();
+                return time.length > 1 ? time : "0" + time;
+            };
+        }
+    </script>
+</html>

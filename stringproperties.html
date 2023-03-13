@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string properties!</title>
+</head>
+<body>
+</body>
+    <script>
+        let username = "Musharraf";
+        let trimname = "   musharraf jamal   ";
+        let phone = "933-407-9737";
+        let lengthofletters = username.length; //length of the string!
+        let letterno0 = username.charAt(0);//to know the letter by their position-number(starts from - 0)
+        let letterM = username.indexOf("M");//where the first that letter in the string by their position number!
+        let letterA = username.lastIndexOf("a");//where the last that letter in the string by their position number!
+        let trim = trimname.trim();//to get rid of the extra spaces in the string!
+        let uppercase = username.toUpperCase(); //change string letter to uppercase!
+        let lowercase = username.toLowerCase(); //change string letter to lowercase!
+        let replace = phone.replaceAll("-","/");//to replace the all same element from the string!
+        console.log(replace);
+
+        // slice : extract a section from the string and return it as a new new string , without modyfying the original string!
+
+        let fullname = "Musharraf jamal";
+        let firstname;
+        let lastname;
+        // firstname = fullname.slice(0 ,9);
+        // lastname = fullname.slice(10);
+
+        //there is also a another method to slice a string! "in this method if you change the fullname then its adapt the name automatically"
+
+        firstname = fullname.slice(0 ,fullname.indexOf(" ")); //this means that the string starts from 0 and go to the first space!
+        lastname = fullname.slice(fullname.indexOf(" ") + 1); //this means that it starts from where the first space added in the string and the "+1" is added to get rid from the first extra space!
+        console.log(firstname);
+        console.log(lastname);
+        //method chaining : calling one method after another in one continuous line of code.
+        //like if we want to cut and change the first letter of the string to capital we can use this method chaining!
+        
+        let string = "musharraf"
+
+        let chaining = string.charAt(0).toUpperCase();
+        console.log(chaining);
+        
+
+       
+    </script>
+</html>

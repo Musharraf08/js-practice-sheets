@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //Function = define code once and use it many times , To perform some code we call the function name!
+
+        // if we want to sing this again and again we can do this by give it a function name!
+
+        function birthdaysong(){
+            console.log("Happy birthday to you ...");
+            console.log("Happy birthday to you ...");
+            console.log("Happy birthday dear ");
+            console.log("Happy birthday to you ...");
+            console.log("You are now 18 years old.");
+        }
+        birthdaysong();
+        birthdaysong();
+
+        //Now lets use this with some "lets"
+
+        // let Name = "Musharraf";//This will show ERROR because let is not valid in or outside the curlybrasis & function
+        // let Age = 19;         //So we have to use function into a function
+
+        letforbirthdayfunction();
+
+        function letforbirthdayfunction(){
+            let Name = "Musharraf";
+            let Age = 19;       //Now in this funtion if we use our "birthdaysongwithlet" function then it will take the variables also [BUT THE MOST IMPORTANT THING IS THAT YOU HAVE TO CALL THIS FUNCTION TO GET ITS ALL FUNCTION AND CODE]
+
+            birthdaysongwithlet(Name,Age);
+            // birthdaysongwithlet(Name,Age); //You can call as many times as you want this function's code!
+        }
+
+        function birthdaysongwithlet(Name,Age){
+            console.log("Happy birthday to you ...");
+            console.log("Happy birthday to you ...");
+            console.log("Happy birthday dear "+ Name);
+            console.log("Happy birthday to you ...");
+            console.log(`You are now ${Age} years old.`);
+        }
+
+        // return : Return a value back to the place where you invoked a function!
+
+        // let's find the area of a rectangle with return:
+
+        let length = window.prompt("What is the length of the rectangle?")
+        let breadth = window.prompt("What is the breadth of the rectangle?")
+
+        let area = getarea(length,breadth);
+        console.log("The area of rectangle is" ,area);
+        function getarea(length,breadth){
+            return length * breadth;
+        };
+    </script>
+</html>

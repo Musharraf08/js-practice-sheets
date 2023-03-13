@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Arrays Spread Operator</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //2D Arrays = An array of arrays.
+        let fruit =["mangoes", "banana", "apple", "oranges"];
+        let vegetables =["carrot", "potatoes", "onions","tomatoes"];
+        let meats =["egg", 'steak', "chicken"];
+
+        let grocerylist = [fruit, vegetables, meats];
+        console.log(grocerylist);
+        //To iterate the value of a 2D Array we use(FOR OF loop)!
+        // for(let list of grocerylist){
+        //     console.log(list);
+        // };
+        //To iterate all variables value of a 2D Array we use(nested loop)!
+        for(let list of grocerylist){
+            for(let items of list){
+                console.log(items);
+            };
+        };
+        //To change a specific value in a 2D Array we use
+        // ["mangoes", "banana", "apple", "oranges"]
+        // ["carrot", "potatoes", "onions","tomatoes"]
+        // ["egg", 'steak', "chicken"]
+        //First "[]" is show the ROW of 2D Array(starts from "0") - second "[]" is show the column of 2D Array!
+        grocerylist[1][3] = "radis";
+        console.log(grocerylist);
+
+        //Spread Operator(...) = allows us to quickly copy all or part of an existing array, string and object into another array, string and object.
+
+        let numbers = [5, 7, 10, 15, 50];
+        let ExtraNumbers = [8, 7, 13, 11];
+
+        numbers.push(...ExtraNumbers);
+        console.log(numbers);
+
+        let Class1 = ["Azhar", "Junaid", "Anas", "Sahil"]
+        let Class2 = ["Musharraf", "Arsalan", "Nasir"]
+
+        Class1.unshift(...Class2);
+        console.log(Class1); // we can also use this - console.log(...Class1) to know the both arrays values only!
+
+        //Rest parameters (...) = The rest parameter syntax allows a function to accept an indefinite number of arguments as an array (Packs arguments into an array)!
+
+        let a = 1;
+        let b = 2;
+        let c = 3;
+        let d = 4;
+        let e = 5;
+
+        function sum(...numbers){
+            let total = 0;
+            for(let number of numbers){
+                total += number
+            }
+            return total
+        };
+        console.log(sum(a, b, c));
+    </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in javascript</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //Object : A group of peoperties and methods , Properties = what an object has, Methods = what an object can do ,use "." to access properties/methods
+
+        //in this model,colour and year are properties! , "sale" and "purchased" are methods!
+        let car = {
+            model:"Mustang",
+            colour:"Red",
+            Year:2023,
+            sale: function(){
+                console.log(`The car is on sale!`)
+            },
+            purchased: function(){
+                console.log(`The car has been purchased!, Thank you for your concern.`)
+            }
+        };
+        console.log(car.model);
+        console.log(car.colour);
+        console.log(car.Year);
+       car.sale();
+       car.purchased();
+
+       //this : reference to a particular object the object depend on the immediate context!
+       let car1 = {
+            model:"Mustang",
+            colour:"Red",
+            Year:2023,
+            sale: function(){
+                console.log(`The ${this.model} is on sale!`)
+            },
+            purchased: function(){
+                console.log(`The car has been purchased!, Thank you for your concern.`)
+            }
+        };
+        let car2 = {
+            model:"audi",
+            colour:"blue",
+            Year:2020,
+            sale: function(){
+                console.log(`The ${this.model} is on sale!`)
+            },
+            purchased: function(){
+                console.log(`The car has been purchased!, Thank you for your concern.`)
+            }
+        };
+        //In this if we want to give any property to the sale method in both car1 and car2 we have to declair it a unique name."any property" to show a property in diffrent object but in same method!
+        car1.sale();
+        car2.sale();
+        // Note : we can use any other name instead of "this"!
+    </script>
+</html>

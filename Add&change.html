@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and change HTML Elements</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>Apple</li>
+        <li>Mange</li>
+        <li>Pineapple</li>
+        <li>Papaya</li>
+    </ul>
+</body>
+    <script>
+        // Add and change HTML elements
+        // .innerHTML (vulnerable to XSS attack)
+        // .textContent (more secure);
+
+        const List = document.getElementById("fruits");
+        const listItem = document.createElement("li");
+        listItem.textContent = "Orange";
+
+        //List.append(listItem); // to add the text content in the end
+        //List.prepend(listItem);  //to add the text content in the start
+        List.insertBefore(listItem, document.getElementsByTagName("li")[2]);
+        // to add the text content in the middle somewhere!
+
+        
+
+    </script>
+</html>

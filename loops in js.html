@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in javascript</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <label id="nestedloop"></label>
+</body>
+    <script>
+        //while loop = repeat some code while some condition is true potentially infinite!
+        // like if we want a username and user have to give his user name! he cannot just CANCEL or OK the prompt or whatever we use to get data from user in this case we can use while loop!
+
+        let username ="";
+        // while (username == "" || username == null) {
+        //     username = prompt("What is your name?");
+        // }
+        // document.getElementById("name").innerHTML = "Hello " + username;
+
+        //DO While loop : this do something then check the condition ,repeat if the condittion is not true!
+
+        let userName;
+
+        // do{
+        //     userName = prompt("What is your name?");
+        // }while(userName == "" || userName == null);
+        // console.log("Hello " + userName);
+
+        //For loop :repeat some code a certain amount of time!
+        
+        //some properties of FOR loop : The assign let is only valid under FOR 
+        //                              first count is the number where we want to start count!
+        //                              second count is the limit of the number
+        //                              third count is shows the incrimenation of the no bt +1
+        for(let count = 1; count <= 5; count +=1){
+            console.log(count);
+        }
+        //second FOR loop example!
+        for(let count = 3; count >= 0; count -=1){
+            console.log(count);
+        }
+        console.log("Happy New Year!");
+
+        //break : breaks out of a loop entirely.
+
+        for(let i = 1; i<=10; i+=1){
+            if(i == 7){ //this means if i = 7 then it break the loop entirely!
+                break;
+            }
+            console.log(i);
+        }
+        console.log("this was the example of break loop!");
+
+        // continue : skip an iteration of a loop.
+
+        for (let i =1; i<=8; i+=1){
+            if(i == 5){ //this will skip the number 5 only then continue the loop!
+                continue;
+            }
+            console.log(i);
+        }
+
+        console.log("This is the example of nested loop!")
+        //nested loop : A loop inside of another loop!
+        for(let i = 1; i <=2; i +=1){
+            for(let j = 1; j <=5; j +=1){
+                console.log(j);
+            }
+        }
+
+        //We can also use nested loop like this!
+        console.log("second nested loop!")
+        let symbol =prompt("What are the symbol you want to specify?")
+        let row = prompt("What are the row you want to specify?")
+        let column = prompt("What are the column you want to specify?")
+        for(let a = 1; a<=row; a+=1){
+            for(let b = 1; b<=column; b+=1){
+                document.getElementById("nestedloop").innerHTML += symbol; //this "+="plus is to add the value of the syymbol.
+            }
+            document.getElementById("nestedloop").innerHTML += "<br>";
+        }
+
+    </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type converstion</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //type conversion = change the data type of a value to another (string , numbers , booleans)
+
+        let age = window.prompt("what is your age?");
+        console.log(age);
+        //to see what is the data type of variable we use
+        console.log(typeof age); //this is a string 
+
+        // to change the value of data type we use
+        age = Number(age);
+        console.log(typeof age);
+
+        // example no. 2..
+
+        let x = 3.14; //this is number datatype
+        let y = 3.14; //this is also a number datatype but we can change this to a number.
+        let z = 3.14; // we can also change datatype to boolean but when it fill up it shows "true" But when we do not fill anything in it ,it will shows "false".
+
+        console.log(x , typeof x);
+        y = String(y);
+        console.log(y, typeof y);
+        z = Boolean(z);
+        console.log(z , typeof z);
+
+    </script>
+</html>

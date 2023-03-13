@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack and Array's methods</title>
+</head>
+<body>
+    <label id="displaytoDOM"></label>
+
+    <h5>counting (function expression)</h5>
+    <h2 id="number">0</h2>
+    <button id="decreaseButton">decrease</button>
+    <button id="increaseButton">increase</button>
+</body>
+    <script>
+        //CallBack = A function passed as an argument to another function.
+
+        //Ensure that a function is not going to run before a task is completed.
+        //Helps us to develop asynchronous code.
+        // (When one functionhas to wait for another function) thats helps us to avoid errors and potential problems
+        // Ex. Wait for a file to load!
+
+        let a = 5;
+        let b = 22;
+        let c = 50;
+        sum(a, b, c, displaytoDOM);
+
+        function sum(a, b, c, callback){
+            let result = a + b + c
+            callback(result);
+        };
+        function displaytoDOM(Output){
+            document.getElementById("displaytoDOM").innerHTML = Output;
+        };
+
+        //Array.forEach() = executes a provided callback function once for each array element.
+        //                  (Executes an array to a single value!)
+
+        let Fruits = ["mango", "banana", "apple", "pineapple", "litchi", "orange", "watermelon"];
+
+        Fruits.forEach(capitalize);
+        Fruits.forEach(print);
+
+        function capitalize (element, index, array){ //this function is capitalize first letter of each string!
+            array[index]=element[0].toUpperCase() + element.substring(2) 
+            //substring is for to start the string from which index number.
+        };
+
+        function print(Output){
+            console.log(Output)
+        };
+
+        //Array.map() = executes a provided callback function once for each array element and creates a new array!
+
+        let numbers = [1, 2, 3, 4, 5];
+        //let's find the square and cube of this number by array.map function!
+
+        function square(element){
+            return Math.pow(element, 2)
+        };
+        let squares = numbers.map(square); //This will make a new array to find the squares of existing numbers!
+
+        squares.forEach(print); //in this we use forEach() to distribute an array into single number variable and we use privious print function here!
+        
+        function cube(element){
+            return Math.pow(element, 3)
+        };
+        let cubes = numbers.map(cube);
+        cubes.forEach(print);
+        
+        // array.filter() = creats a new array with all elements that pass the test provided by function!
+
+        let ages = [11, 45, 18, 20, 36];
+        function checkAge (element){
+            return element >= 18;
+        };
+        let adult = ages.filter(checkAge);
+        adult.forEach(print);
+
+        //Array.reduce() = it reduces an array to a single value!
+        let prices = [50, 62, 78, 100, 500];
+        function totalPrice(total, price){
+            return total + price;
+        }
+        let total = prices.reduce(totalPrice);
+        console.log(`Your total is : ${total}`);
+
+        //Array sorting!
+        let marks = [100, 20, 84, 65, 77, 99];
+        function descendingsort(x, y){
+            return y - x;
+        };
+        function ascendingsort(x, y){
+            return x - y;
+        };
+        marks = marks.sort(ascendingsort);
+        marks.forEach(print);
+
+        // function expression = A function without any name.
+        let count = 0;
+        document.getElementById("decreaseButton").onclick = function(){
+            count -=1;
+            document.getElementById("number").innerHTML = count;
+        };
+        document.getElementById("increaseButton").onclick = function(){
+            count +=1;
+            document.getElementById("number").innerHTML = count;
+        };
+
+    </script>
+</html>

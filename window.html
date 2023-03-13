@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window property</title>
+</head>
+<body>
+    <button id="mybtn">button</button>
+    <script>
+        //window = interface used to talk to the web browser the DOM is the property of the window!
+
+        console.dir(window);
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        console.log(window.location.href);
+        //window.location.href = "https://google.com" //this will go to the mentioned site!
+        console.log(window.location.hostname);
+        console.log(window.location.pathname);
+
+        const myButton = document.querySelector("#mybtn");
+        // myButton.addEventListener("click", () => window.open("https//google.com"));
+        // myButton.addEventListener("click", () => window.close());
+        myButton.addEventListener("click", () => window.print()); // this will print the page or whatever you give access to print.
+
+        // window.alert("this is an alert!")
+        // window.confirm("click OK to continue");
+        let age = window.prompt("what is your age?")
+        if(age <= 18){
+            alert("You should have to 18+ to access the website!")
+            window.close()
+        }
+    </script>
+</body>
+</html>

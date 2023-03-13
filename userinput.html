@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taking user input</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 2px;
+            font-family: Tahoma, sans-serif;
+        }
+        input{
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 0.3rem;
+        }
+        #btn{
+            margin-top: 2px;
+            background-color: rgb(255, 255, 255);
+            padding: 4px;
+            background-color: lightgray;
+            border: 1.5px solid black;
+            border-radius: 5px;
+            font-weight: 520;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h4>What is your name?</h4> 
+    <input type="text" id="name" required> <br>
+    <h4>Age:</h4> 
+    <input type="text" id="Age" required> <br>
+    <button id="btn">submit</button>
+    <br><br><br><br>
+    <h2 id="usernameshow"></h2>
+    
+</body>
+    <script>
+        //there are two ways to get user input4
+
+        //First easy way is get user input with a window prompt:
+
+        // let username = window.prompt("what is your name?"); 
+        //console.log(username); //we use console.log to display user's input on console.
+
+        //second way to get user input is HTML textbox.
+        
+        document.getElementById("btn").onclick = function(){
+
+            username = document.getElementById("name").value;
+            Age = document.getElementById("Age").value;
+            console.log("name =" ,username);
+            console.log("Age =" ,Age);
+            //to show the name on the DOM we can use this!
+            document.getElementById("usernameshow").innerHTML = "Hello " + username + "! how are you?";
+        }
+
+    </script>
+</html>

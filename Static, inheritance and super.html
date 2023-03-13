@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static, inheritance and super</title>
+</head>
+<body>
+    <div>Static, inheritance and super(inheritance constructor) </div>
+</body>
+    <script>
+        //static = belongs to the class , not to the objects, properties useful for caches, fixed-configuration, methods =useful for utility function!
+
+        class cars{
+            static carCount = 0;
+
+            constructor(model){
+                this.model = model;
+                cars.carCount += 1
+            }
+            static startRace(){
+                console.log("3...2...1...GO!")
+            }
+        };
+        let car1 = new cars("audi");
+        let car2 = new cars("ferrari");
+        let car3 = new cars("mustang");
+        let car4 = new cars("BMW");
+        console.log(cars.carCount);
+        cars.startRace(); //this is for the main class "cars" not for not for one object like - "mustang".
+
+        //Inheritance = A child class can inherit all the methods and properties from its parent class!
+
+        class Animals{
+            Alive = true;
+            eat(){
+                console.log(`${this.name} is eating!`);
+            };
+            sleep(){
+                console.log(`${this.name} is sleeping`);
+            };
+        };
+
+        class Rabbit extends Animals{
+            name = "Rabbit";
+            run(){
+                console.log(`${this.name} is running`);
+            };
+        };
+        class Fish extends Animals{
+            name = "Fish"
+            swim(){
+                console.log(`${this.name} is swimming`);
+            };
+        };
+        class Sparrow extends Animals{
+            name = "Sparrow"
+            fly(){
+                console.log(`${this.name} is flying`);
+            };
+        };
+        let rabbit = new Rabbit;
+        let fish = new Fish;
+        let sparrow = new Sparrow;
+
+        console.log(`Rabbit is alive : ${rabbit.Alive}`);
+        rabbit.eat();
+        console.log(`Fish is alive : ${fish.Alive}`);
+        fish.swim();
+        console.log(`Sparrow is alive : ${sparrow.Alive}`);
+        sparrow.fly();
+
+        //Super : Refers to the parent class. Commonly used to invoke constructor of a parent class!
+
+        class food{
+            constructor(name, fresh){
+                this.name = name;
+                this.fresh = fresh;
+            };
+        };
+        class fruits extends food{
+            constructor(name, fresh, sweet){
+                super(name, fresh);
+                this.sweet = sweet;
+            };
+            display(){
+                console.log(`The fruit name is ${this.name}. Is the ${this.name} is fresh? : ${this.fresh}. Is the ${this.name} is sweet in taste? : ${this.sweet}`);
+            }
+        };
+        class vegetables extends food{
+            constructor(name, fresh, cleaned){
+                super(name, fresh);
+                this.cleaned = cleaned;
+            };
+            display(){
+                console.log(`The vegetable name is ${this.name}. Is the ${this.name} is fresh? : ${this.fresh}. Is the ${this.name} is cleaned? : ${this.cleaned}`);
+            }
+        };
+        class meats extends food{
+            constructor(name, fresh, coocked){
+                super(name, fresh);
+                this.coocked = coocked;
+            };
+            display(){
+                console.log(`The meat name is ${this.name}. Is the ${this.name} is fresh? : ${this.fresh}. Is the ${this.name} is coocked well? : ${this.coocked}`);
+            }
+        };
+        const fruit1 = new fruits("Mango", true, true);
+        fruit1.display();
+        const fruit2 = new fruits("Banana", true, false);
+        fruit2.display();
+
+        const vegetable1 = new vegetables("Carrot", false, false);
+        vegetable1.display();
+        
+        const meat1 = new meats("Steak", false, true);
+        meat1.display();
+    </script>
+</html>

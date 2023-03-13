@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <div>Arrow function!</div>
+</body>
+    <script>
+        // Arrow function(=>): compact alternate to a traditional function (It makes code readeble);
+        // let's take example of traditional function and an arrow function to find the percentage!
+        //tradional function!
+        const percent = function(x,y){
+            return x/y * 100
+        }
+        console.log(percent(37,50));
+        //Arrow function!
+        const Arrowper = (x,y) => x/y * 100;
+        console.log(Arrowper(47,50));
+
+        //Another example 
+        let grades = [98, 84, 100, 93, 57, 66, 82];
+        //Traditional function EXAMPLE!
+        function descending(x,y){
+            return y - x
+        };
+        function print(element){
+            console.log(element)
+        };
+        grades.sort(descending);
+        grades.forEach(print);
+
+        //Arrow function EXAMPLE!
+        grades.sort(descendsort = (x,y) => y - x);
+        grades.forEach(print = element => console.log(element)); 
+    </script>
+</html>

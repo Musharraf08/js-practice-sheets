@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dise roll game</title>
+</head>
+<body>
+    <H1>Random dises!</H1>
+    <div id="dise1">0</div>
+    <div id="dise2">0</div>
+    <div id="dise3">0</div>
+    <button id="roll">Roll</button>
+    <button id="reset">Reset</button>
+</body>
+    <script>
+        let a;
+        let b;
+        let c;
+        let Reset = 0;
+        document.getElementById("roll").onclick = function(){
+            document.getElementById("dise1").innerHTML = Math.ceil(Math.random() * 6);
+            document.getElementById("dise2").innerHTML = Math.ceil(Math.random() * 6);
+            document.getElementById("dise3").innerHTML = Math.ceil(Math.random() * 6);
+        }
+        document.getElementById("reset").onclick = function(){
+            document.getElementById("dise1").innerHTML = Reset;
+            document.getElementById("dise2").innerHTML = Reset;
+            document.getElementById("dise3").innerHTML = Reset;
+        }
+    </script>
+</html>

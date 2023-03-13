@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celsius fahrenheit changer!</title>
+</head>
+<body>
+    <h3>Enter a temprature</h3>
+    <input type="text" id="textbox"> <br>
+    <label>Convert into:</label> <br>
+    <input type="radio" id="cradio" name="temp">
+    <label for="cradio">celsius</label><br>
+    <input type="radio" id="fradio" name="temp">
+    <label for="fradio">Fahrenheit</label><br>
+    <input type="button" value="submit" id="convert">
+    <label id="result"></label>
+</body>
+    <script>
+        let temp;
+
+        document.getElementById("convert").onclick = function(){
+            
+            if(document.getElementById("cradio").checked){
+                temp = document.getElementById("textbox").value;
+                temp = Number(temp);
+                temp = celsius(temp);
+                document.getElementById("result").innerHTML = `${temp} °C`;
+            }
+            else if(document.getElementById("fradio").checked){
+                temp = document.getElementById("textbox").value;
+                temp = Number(temp);
+                temp = fahrenheit(temp);
+                document.getElementById("result").innerHTML = `${temp} °C`;
+            }
+            else{
+                document.getElementById("result").innerHTML = `Select a unit!`
+            }
+
+
+        }
+        function celsius(temp){
+            return (temp - 32) * 5/9;
+        };
+        function fahrenheit(temp){
+            return temp * 9/5 + 32;
+        };
+    </script>
+</html>

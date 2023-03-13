@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const variable</title>
+</head>
+<body>
+    <div>Find the circumference of a circle!</div>
+    <div>Radius</div>
+    <input type="text" id="radius">
+    <button id="btn">find circumference</button>
+    <div id="circumference">The circumference of the circle is : </div>
+    <br>
+    <div>Find the perimeter of the square</div>
+    <div>Side of the Square</div>
+    <input type="text" id="side">
+    <button id="bttn">find circumference</button>
+    <div id="perimeter">The perimeter of the square is : </div>
+
+</body>
+<script>
+    //const = A variable that can't be changed!
+
+    // let's make a code to understand better const , we find the circumference of a circle!
+    
+    const PI = 22/7; //this the value of pi in maths, we use const in the value of pie because its value will naver changed!
+    let radius; //we blank the value of radius because we take the value of radius from user!
+    let circumference;
+    
+    document.getElementById("btn").onclick = function(){
+        radius = document.getElementById("radius").value;
+        radius = Number(radius);
+        circumference = 2 * PI * radius;
+        // console.log(circumference);
+        document.getElementById("circumference").innerHTML = "The circumference of the circle is : " + circumference;
+    }
+    
+    // Second example - find the perimeter of the Square!
+    let side;
+    let perimeter;
+
+    document.getElementById("bttn").onclick = function(){
+        side = document.getElementById("side").value;
+        side = Number(side);
+        perimeter = side*side;
+        document.getElementById("perimeter").innerHTML = "The perimeter of the square is : " + perimeter;
+    };
+    
+</script>
+</html>

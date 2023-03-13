@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested function</title>
+</head>
+<body>
+    <div>Nested function</div>
+</body>
+    <script>
+        //Nested function : functions inside a other function. outer functions have access to inner functions! inner functions are "hidden" from outside the outer function(used in closures)!
+
+        // let's know this by making a display note for new user login!
+        let userName = prompt("What is your username!");
+        let inbox = 0;
+
+        function login(){
+            function displayUserName(){
+                console.log(`welcome ${userName}`)
+            }
+            function displayInbox(){
+                console.log(`You have ${inbox} messages!`)
+            }
+            //let's invoke this two functions inside this function!
+            displayUserName();
+            displayInbox();
+        };
+        login();
+
+    </script>
+</html>

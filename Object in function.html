@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass an object in a function as an argument!</title>
+</head>
+<body>
+    <div>Pass an object in a function as an argument!</div>
+</body>
+    <script>
+        class Mobiles{
+            constructor(name, colour, price){
+                this.name = name
+                this.colour = colour
+                this.price = price
+            };
+        };
+        const mobile1 = new Mobiles("Redmi note 6 pro", "Rose gold", 14000);
+        const mobile2 = new Mobiles("Iphone14", "Black", 120000);
+        const mobile3 = new Mobiles ("Oneplus nord", "Sky blue", 25000);
+
+        //if we want to show all the properties of an object we make a function for it!
+
+        let displayinfo = Mobile =>{
+            console.log(Mobile.name);
+            console.log(Mobile.colour);
+            console.log(Mobile.price);
+        };
+        displayinfo(mobile1);
+        // we can also change the object constructar value by use of a function!
+        let changecolour = (Mobile, colour) =>{
+            Mobile.colour = colour
+        };
+        changecolour(mobile2, "White");
+        displayinfo(mobile2);
+    </script>
+</html>

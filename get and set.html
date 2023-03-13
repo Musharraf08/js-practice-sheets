@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get and set</title>
+</head>
+<body>
+    <div>get and set</div>
+</body>
+    <script>
+        // get (_) = binds an object property to a function when that object property is acceessed!
+
+        class Apples{
+            constructor(quantity){
+                this._quantity = quantity 
+            }
+            get quantity(){
+                return `The quantity of the apple is ${this._quantity}.`;
+            }
+        }
+        const Apple = new Apples(50)
+        console.log(Apple.quantity);
+        
+    </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //promise = objects that encapsulates the result of an asynchronous operation let asynchronous methods returns value like synchronous methods "I promise to return something in future"
+
+        //Promises are objects which are used to perform asynchronous operations. They are just like placeholders to store a future value that will be returned after some time. They contain two properties: PromiseState and PromiseResult.
+
+        //The state is pending then : "fulfilled" or "rejected" the result is what can be returned 2 parts producing and consuming!
+
+        //producing!
+        const promise = new Promise((resolve, reject) => {
+            let fileLoded = false;
+            if(fileLoded){
+                resolve ("File loaded")
+            }
+            else{
+                reject("FILE not loaded")
+            }
+        });
+        //consuming!
+        promise.then(value => console.log(value)).catch(error => console.log(error));
+
+        // second example!
+        const wait = time => new Promise(resolve => {
+            setTimeout(resolve, time)
+        });
+        wait(5000).then(() => console.log("Thanks for waiting!"));
+
+        //async = makes a function return a promise
+
+        async function fileLoding(){
+            let fileLodeding = true;
+            if (fileLodeding){
+                return "File loaded!";
+            }
+            else{
+                throw "File not loaded!";
+            }
+        };
+        fileLoding().then(value => console.log(value)).catch(error => console.log(error));
+
+        //other way to do this :====
+
+        function files(){
+            let files = false;
+            if(files){
+                return Promise.resolve("files are loaded!")
+            }
+            else{
+                return Promise.reject("files are not loaded!")
+            }
+        };
+        files().then(value => console.log(value)).catch(error => console.log(error));
+    </script>
+</html>

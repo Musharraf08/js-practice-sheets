@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time!</title>
+</head>
+<body>
+    <div id="currentDate"></div>
+    <div id="stringdate"></div>
+    <div id="display"></div>
+</body>
+    <script>
+        // The date object is used to work with date and time!
+
+        // let date = new Date();
+        // console.log(date);
+        // in this(year, month.starts from 0-11, date, hour, minutes, seconds, miliseconds);
+        let date = new Date(2023, 0, 1, 5, 30, 50, 40);
+        date = date.toLocaleString();
+        document.getElementById("currentDate").innerHTML = date;
+        // You can also type this like a string
+        let stringdate = new Date("January, 1, 2023 00:00:00");
+        stringdate = stringdate.toLocaleString();
+        document.getElementById("stringdate").innerHTML = stringdate;
+
+        //You can also display the current specific date or time!
+        let newDate = new Date();
+        let year = newDate.getFullYear()
+        let dayofMonth = newDate.getDate()
+        let dayofweek = newDate.getDay()
+        let month = newDate.getMonth()
+        let hour = newDate.getHours()
+        let minutes = newDate.getMinutes()
+        let seconds = newDate.getSeconds()
+        let miliseconds = newDate.getMilliseconds()
+        console.log(hour);
+
+        //You can also set any date or time by using "set"!
+
+        newDate.setFullYear(2025);
+        newDate = newDate.toLocaleString()
+        console.log(newDate); //Just like this you can assign all get properties to set properties!
+
+        //we can create a function for current date and time!
+
+        let functiondate = new Date();
+        function formatedate(functiondate){
+            let day = functiondate.getDate();
+            let month = functiondate.getMonth() + 1;
+            let year = functiondate.getFullYear();
+            return `The current date is : ${day}/${month}/${year}`
+        }
+        console.log(formatedate(functiondate));
+
+        function formatTime(functiondate){
+            let hour = functiondate.getHours();
+            let minutes = functiondate.getMinutes();
+            let seconds = functiondate.getSeconds();
+            let amORpm = hour >=12 ? "pm" : "am"; //this will set the AM or PM for its respective time!
+            hour = (hour % 12) || 12;  //this will change the military time format to standerd time format for example -----(let time is 23 this arthematic expression will didide 23 by 12 and return 11 PM as time)-----
+            return `The current time is : ${hour}-${minutes}-${seconds} ${amORpm}`;
+        }
+        console.log(formatTime(functiondate));
+    </script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else and switch statement</title>
+</head>
+<body>
+    <!-- this is for checkbox and radio buttons -->
+    <label for="mycheckbox">Accept terms & conditions</label>
+    <input type="checkbox" id="mycheckbox"> <br>
+    <label for="visa">Visa</label>
+    <input type="radio" name="payment radio" id="visa">
+    <label for="mastercselectastercard</label>
+    <input type="radio" name="payment radio" id="mastercard">
+    <label for="paypal">Paypal</label>
+    <input type="radio" name="payment radio" id="paypal">
+    <button id="submit">Submit</button>
+</body>
+    <script>
+        //if statement : A basic form of decision making if a condition is true , then do this if not , then do this!
+         let Age = 18; //window.prompt("What is your age?");
+        
+        if(Age >65){
+            console.log("You are a senior citizen!");
+        } 
+        else if(Age >= 18){
+            console.log("You are an adult!");
+        }
+        else{
+            console.log("Yor are not an adult!");
+        }
+        //we can also use this in boolean!
+        let online = false;
+        if(online){
+            console.log("You are online!");
+        }
+        else{
+            console.log("You are offline!");
+        };
+
+        //Now lets make if else condition with some checkbox and radio button!
+        document.getElementById("submit").onclick = function(){
+            const mycheckbox = document.getElementById("mycheckbox");
+            const visa = document.getElementById("visa");
+            const mastercard = document.getElementById("mastercard");
+            const paypal = document.getElementById("paypal");
+            if(mycheckbox.checked){
+                console.log("You can access the feature of website!");
+            }
+            else{
+                console.log("You can NOT access the feature of website!");
+            }
+
+            if(visa.checked){
+                console.log("You select visa for the payment!");
+            }
+            else if(mastercard.checked){
+                console.log("You select Master card for the payment!");
+            }
+            else if(paypal.checked){
+                console.log("You select Paypal for the payment!");
+            }
+            else{
+                console.log("You have not select any option for the payment!");
+            }
+        }
+
+        //Alternate for the if else statement!
+        let grade = "A";
+
+        switch(grade){
+            case "A":
+                console.log("You did Great!");
+                break;
+            case "B":
+                console.log("You did Good");
+                break;
+            case "C":
+                console.log("You paased... Barely");
+                break;
+            case "D":
+                console.log("You FAILED!");
+                break;
+            default:
+                console.log( grade, "is not a grade!");
+        }
+        //You can also use it with number like:
+        let gradenumber = 80;
+        switch(true){
+            case gradenumber > 100:
+                console.log( gradenumber, "is not below 101");
+                break;
+            case gradenumber >= 85:
+                console.log("You did Great");
+                break;
+            case gradenumber >=60:
+                console.log("You did Good!");
+                break;
+            case gradenumber >=45:
+                console.log("You paased... Barely");
+                break;
+            default:
+                console.log( "You FAILED!");
+        }
+        //AND(&&) , OR(||) : Gives us the ability to check more than one condition currently!
+        // AND ($$) : Both condition must be true!
+        //OR (||) : Either condition can be true!
+        
+        let temp = 15;
+        let sunny = false;
+        if(temp > 0 && temp < 30 && sunny){//You can also add to condition like this:-if((temp > 0 && temp < 30) && sunny)
+            console.log("The weather is GOOD!");
+        }
+        else{
+            console.log("The weather is BAD!");
+        };
+
+        let temprature = -15;
+        if(temprature > 0 || temprature < 30){
+            console.log("The weather is GOOD!");
+        }
+        else{
+            console.log("The weather is BAD!");
+        };
+
+        //"!"NOT logical operator (Typically used to reverse a condition's boolean value)
+
+        let adult = false;
+        if(!adult){
+            console.log("You are not an adult!");
+        }
+        else{
+            console.log("You are an adult!");
+        }
+
+        //second example of this!
+        let marks = 45;
+        if(!(marks >= 60)){
+            console.log("You are not first division!")
+        }
+        else{
+            console.log("You are first division!")
+        }
+
+    </script>
+</html>

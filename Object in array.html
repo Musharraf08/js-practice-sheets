@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in Array</title>
+</head>
+<body>
+    <div>Object in Array</div>
+</body>
+    <script>
+        //We can store object in array to get organized your object!
+        class laptop{
+            constructor(company, price, gaming){
+                this.company = company
+                this.price = price
+                this.gaming = gaming
+            };
+            description(){
+                console.log(`The name of the laptop company is ${this.company} , its price is ${this.price} , Does it suitable for gaming? : ${this.gaming}`)
+            }
+        };
+        let laptop1 = new laptop("dell", 85000, true)
+        let laptop2 = new laptop("acer", 42000, false)
+        let laptop3 = new laptop("omen", 145000, true)
+        let laptop4 = new laptop("lenovo", 62000, true);
+
+        let laptops = [laptop1, laptop2, laptop3, laptop4];
+        console.log(laptops[0].company);
+        console.log(laptops[0].price);
+        console.log(laptops[0].gaming);
+        console.log(laptops[2].company);
+        
+        // let's make a loop for the name of object method whose in a array!
+        function displayinfo(laptops){
+            for(let laptop of laptops){
+                laptop.description();
+            };
+        };
+        displayinfo(laptops);
+    </script>
+</html>

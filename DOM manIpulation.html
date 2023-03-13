@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <input type="radio" name="meats" id="chicken"  >
+    <label for="chicken">chicken</label> <br>
+    <input type="radio" name="meats" id="egg">
+    <label for="egg">egg</label><br>
+    <input type="radio" name="meats" id="mutton" checked="checked">
+    <label for="mutton">mutton</label>
+
+    <ul>
+        <li class="fruits">Mango</li>
+        <li class="fruits">Orange</li>
+        <li class="fruits">Banana</li>
+        <li class="fruits">Apple</li>
+    </ul>
+
+    <div id="tomato">tomato</div>
+    <div id="carrot">carrot</div>
+    <div id="potato">potato</div>
+    <a href="http://google.com" target="_blank">Google</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repellendus quia fugiat alias? Unde, officiis! Harum ducimus nesciunt numquam veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repellendus quia fugiat alias? Unde, officiis! Harum ducimus nesciunt numquam veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repellendus quia fugiat alias? Unde, officiis! Harum ducimus nesciunt numquam veritatis.</p>
+
+</body>
+    <script>
+        // We can select any element of html by given selectment 
+        // document.getElementById
+        // document.getElementsByClassName
+        // document.getElementsByName
+        // document.getElementsByTagName
+        // document.querySelector
+        // document.querySelectorAll
+
+        document.getElementById("tomato").style.backgroundColor = "lightgreen";
+        document.getElementById("carrot").style.color = "red";
+        document.getElementById("potato").style.fontWeight = "900";
+
+        let fruits = document.getElementsByClassName("fruits");
+        fruits[1].style.color = "blue";
+
+        let meats = document.getElementsByName("meats");
+        meats.forEach(meats => {
+            if(meats.checked){
+                console.log(meats.id);
+            }
+        });
+        let vegetable = document.getElementsByTagName("li");
+        vegetable[2].style.backgroundColor ="lightpink";
+
+        // in querySelector we select by anything to select any atribute of a element we use - document.querySelector("[atribute_name]")----- id("#id_name")----- class(".class_name") ----- tag name("tag_name")
+
+        let querySelector = document.querySelector("[target]");
+        querySelector.style.color = "green";
+
+        let querySelectorAll = document.querySelectorAll("P"); // it will be an array so we have to use forEach method!
+
+        querySelectorAll.forEach(element =>{
+            element.style.backgroundColor = "lightgreen"
+        });
+        
+    </script>
+</html>

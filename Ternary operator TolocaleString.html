@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operator! And To locale String</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        // Ternary Operator : Shortcut for "IF ELSE Statement!"
+        //take three operands : 1. A condition with "?"
+        //                      2. Expression if true ":"
+        //                      3. Expression if False
+        // Condition ? expression if true : expression if False
+
+        let Adult = checkAge(5);
+
+        console.log(Adult);
+
+        function checkAge (Age){
+            return Age >= 10 ? true : false;
+        };
+        
+        //Example number = 2
+        
+        checkWinner(false)
+        function checkWinner(win){
+            win ?console.log("YOU WIN!") : console.log("YOU LOSE!")
+        };
+
+        //tolocaleString : Return a string with a language sensitive representation of this number!
+
+        // number.tolocaleString(locale , {option});
+        //"locale" : specify that language (Undefined = default set in browser!)
+        //"Option" : Object with formatting options
+
+        let myNum = 123456.789;
+
+        //myNum = myNum.toLocaleString("en-US"); //US English!
+        //myNum = myNum.toLocaleString("hi-IN"); //Indian hindi!
+        // myNum = myNum.toLocaleString("de-DE"); //Standerd german!
+
+        // let's use it in country currency!
+        // myNum = myNum.toLocaleString("en-US", {style : "currency" , currency : "USD"}); //US Dollers
+        // myNum = myNum.toLocaleString("hi-IN", {style : "currency" , currency : "INR"}); // Indian Rupee
+        myNum = myNum.toLocaleString("de-DE", {style : "currency" , currency : "EUR"}); // Euros
+        console.log(myNum);
+
+        // let's change the value in percent(%);
+        let percent = 1;
+       percent = percent.toLocaleString(undefined, {style : "percent"});
+       console.log(percent);
+
+       //we also give the number a UNIT like: kilogram , celsius ,meter,etc.
+       let unit = 420;
+       unit = unit.toLocaleString(undefined, {style : "unit" , unit : "meter"});
+       console.log(unit);
+
+    </script>
+</html>

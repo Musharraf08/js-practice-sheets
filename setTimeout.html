@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <div id="firstMessage"></div>
+    <div id="secondMessage"></div>
+    <div id="thirdMessage"></div>
+    <button id="clearButton">Clear</button>
+    <div id="finalOutput"></div>
+</body>
+    <script>
+        // Timeout = invokes a function after some miliseconds of time. Asynchronous function(doesn't pause execution!)
+
+        function firstMessage(){
+            document.getElementById("firstMessage").innerHTML = "Hello everyone,";
+        }
+        function secondMessage(){
+            document.getElementById("secondMessage").innerHTML = "its me musharraf jamal:>";
+        }
+        function thirdMessage(){
+            document.getElementById("thirdMessage").innerHTML = "and this a example of setTimeout function!";
+        }
+        function finalOutput(){
+            document.getElementById("finalOutput").innerHTML = "wow, its cleared!";
+        }
+        let Timer1 = setTimeout(firstMessage, 5000);
+        let Timer2 = setTimeout(secondMessage, 10000);
+        let Timer3 = setTimeout(thirdMessage, 15000);
+
+        //if you click the clear button then the setTimeout function will not executes!
+        document.getElementById("clearButton").onclick = function(){
+            clearTimeout(Timer1);
+            clearTimeout(Timer2);
+            clearTimeout(Timer3);
+            // document.getElementById("firstMessage").innerHTML = "wow, its cleared!"
+        }
+        
+        // setInterval = invokes a function repeatedly some miliseconds of time. Asynchronous function(doesn't pause execution!)
+
+        let count = 0;
+        let max = prompt("count up to what number?")
+        max = Number(max);
+
+        let counting = setInterval(countup, 500)
+
+        function countup(){
+            count +=1;
+            console.log(count);
+            if(count>= max){
+                clearInterval(counting)
+            };
+        };
+    </script>
+</html>
